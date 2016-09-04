@@ -3,8 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Starter Template for bulma</title>
+    <title>Redmine of ISP department</title>
     <link rel="stylesheet" href="css/style.css">
+    <style media="screen" type="text/css">
+    .tran:hover{
+      transform: scale(1.2, 1.2) translateY(-40px);
+      transition: all 0.2s ease 0.2s;
+    }
+
+    .maintitle:hover{
+      transform: scale(1.4,1.4);
+      transition: all 0.2s ease-in-out 0.2s;
+    }
+    </style>
   </head>
   <body>
 		<section class="hero is-success is-fullheight">
@@ -38,11 +49,11 @@
 				</header>
 			</div>
 			<div class="hero-body">
-				<div class="container has-text-centered">
-					<h1 class="title">
+				<div class="container has-text-centered maintitle">
+					<h1 class="title" style="font-size:50px">
 						ISP Department
 					</h1>
-					<h2 class="subtitle">
+					<h2 class="subtitle" style="font-size:40px">
 						运营商事业部
 					</h2>
 				</div>
@@ -50,7 +61,7 @@
 		</section>
 		<section class="section">
 			<div class="tile is-ancestor">
-				<div class="tile" id="go_reg">
+				<div class="tile tran" id="go_reg">
 					<div class="tile is-parent">
 						<article class="tile is-child notification is-primary">
 							<p class="title">Redmine新用户</p>
@@ -59,20 +70,20 @@
 						</article>
 					</div>
 				</div>
-				<div class="tile" id="go-log">
+				<div class="tile tran" id="go_log">
 					<div class="tile is-parent">
 						<article class="tile is-child notification is-info">
-							<p class="title">Redmine注册用户</p>
-							<p class="subtitle">点击进入登陆页面，管理任务</p>
+							<p class="title">登陆Redmine</p>
+							<p class="subtitle">点击进入登陆页面，如果已登录，直接点击项目</p>
 							<!-- <a class="button" href="redmine/login">view details</a> -->
 						</article>
 					</div>
 				</div>
-				<div class="tile" id="go-scan">
+				<div class="tile tran" id="go_scan">
 					<div class="tile is-parent">
 						<article class="tile is-child notification is-warning">
-							<p class="title">其他人员</p>
-							<p class="subtitle">点击浏览公开项目，无需注册</p>
+							<p class="title">项目查看</p>
+							<p class="subtitle">点击浏览公开项目，或者管理自己的项目</p>
 							<!-- <a class="button" href="redmine/projects">view details</a> -->
 						</article>
 					</div>
@@ -85,7 +96,15 @@
 			</div>
 		</section>
 		<script>
-			
+      document.getElementById('go_reg').addEventListener("click", function(){
+        window.location.href="redmine/account/register";
+      });
+      document.getElementById('go_log').addEventListener("click", function(){
+        window.location.href="redmine/login";
+      });
+      document.getElementById('go_scan').addEventListener("click", function(){
+        window.location.href="redmine/projects";
+      });
 		</script>
   </body>
 </html>
