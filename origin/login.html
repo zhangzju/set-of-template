@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <style media="screen">
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+    }
+    
+    body {
+        text-align: center;
+        font-family: times, Times New Roman, times-roman, georgia, serif;
+        font-size: 100%;
+    }
+    
+    input {
+        line-height: normal;
+        font-size: 100%;
+    }
+    
+    a {
+        outline: none;
+        display: inline-block;
+        margin-top: 25px;
+        text-decoration: none;
+        color: #ff4081;
+        font-size: 14px;
+    }
+    
+    .login-panel {
+        margin: 20px auto;
+        max-width: 360px;
+        background: #fff;
+        padding: 45px 20px;
+        border-radius: 4px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: block;
+        text-align: center;
+    }
+    
+    .login-icon {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        background-color: #efefef;
+        background-size: 100%;
+        background-image: linear-gradient(to right, #efefef 0%, #efefef 50%, #elelel 50%, #elelel 100%);
+        margin: auto;
+        border-radius: 100%
+    }
+    
+    .login-icon-block {
+        position: relative;
+        width: 80px;
+        height: 60px;
+        background: #ffa000;
+        margin: auto;
+        transform: translateY(60px);
+        border-radius: 8px;
+        box-shadow: 0 0 2px #f57c00 inset;
+    }
+    
+    .login-title {
+        font-weight: 400;
+        font-size: 24px;
+        text-align: center;
+        color: #ff4081;
+        margin: 15px auto;
+        display: block;
+        -webkit-margin-before: 1.33em;
+        -webkit-margin-after: 1.33em;
+    }
+    
+    .login-form {
+        margin-top: 30px;
+        position: relative;
+        font-size: 15px;
+        text-align: center;
+        color: #666;
+    }
+    
+    .login-form-control {
+        width: 100%;
+        position: relative;
+        z-index: 3;
+        background: none;
+        border: none;
+        height: 35px;
+        padding: 5px 0;
+        transition: 0.3s;
+        border-bottom: 1px solid #777;
+    }
+    
+    .login-form .login-form-control:focus + .login-form-label,
+    .login-form .login-form-control:valid + .login-form-label {
+        font-size: 12px;
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+    
+    .login-form-label {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 5px;
+        transition: 0.3s;
+        cursor: default;
+    }
+    
+    .login-btn {
+        background: #ff4081;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 32px;
+        border: none;
+        position: absolute;
+        transition: 0.3s;
+        box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.3) inset;
+        margin: auto;
+        right: -30px;
+        bottom: 90px;
+        cursor: pointer;
+        -webkit-appearance: button;
+    }
+    
+    .login-btn:hover {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.3) inset, 0 3px 6px rgba(0, 0, 0, 0.16), 0 5px 11px rgba(0, 0, 0, 0.23);
+    }
+    
+    .login-btn:hover .icon-arrow {
+        -ms-transform: rotate(45deg) scale(1.2);
+        -webkit-transform: rotate(45deg) scale(1.2);
+        transform: rotate(45deg) scale(1.2);
+    }
+    
+    .login-btn:focus,
+    .floating-btn:active {
+        outline: none;
+    }
+    
+    .icon-arrow {
+        position: relative;
+        width: 13px;
+        height: 13px;
+        border-right: 3px solid #fff;
+        border-top: 3px solid #fff;
+        display: block;
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin: auto;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+    }
+    
+    .icon-arrow:after {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 3px;
+        background: #fff;
+        left: -5px;
+        top: 5px;
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="login-panel">
+        <div class="login-icon">
+            <div class="login-icon-block"></div>
+        </div>
+        <h4 class="login-title">User Login</h4>
+        <div class="login-form">
+            <input required="required" class="login-form-control" />
+            <label class="login-form-label">Username </label>
+        </div>
+        <div class="login-form">
+            <input type="password" required="required" class="login-form-control" />
+            <label class="login-form-label">Password</label>
+        </div><a href="#">Forgot Password ?  </a>
+        <button class="login-btn"><i class="icon-arrow"></i></button>
+    </div>
+</body>
+
+</html>
